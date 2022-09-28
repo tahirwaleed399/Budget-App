@@ -1,0 +1,18 @@
+<nav>
+    <h1>Budget Tracker</h1>
+</nav>
+<section>
+    <h1 [ngClass]="{'red':totalBudget < 0 , 'green' : totalBudget > 0}">Rs : {{totalBudget}}</h1>
+</section>
+
+<app-add-form (budgetItemsEvent)="func($event)" [StylesType]="'add-form'"></app-add-form>
+
+
+<app-lists [listGettingItems]='budgetItems' (setAfterDeleteEvent)="setAfterDeleteEvent($event)"></app-lists>
+
+<!-- [StylesType]="'add-form'" -->
+
+<footer>
+
+    <p>Ch Waleed Tahir Budget App &copy; 2021 | All Rights Reserved</p>
+</footer>

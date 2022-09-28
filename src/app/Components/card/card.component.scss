@@ -1,0 +1,66 @@
+    .card {
+        background-color: #F5F5F5;
+        padding: 1rem;
+        margin: 20px 20px;
+        margin-left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        &.expense span {
+            color: #d63031;
+            &:nth-child(2) {
+                background: lighten(#d63031, 40%);
+                border-radius: 5px;
+                padding: 3px 11px;
+                max-height: 30px;
+                margin-left: 10px;
+            }
+        }
+        &.income span {
+            color: #00b894;
+            &:nth-child(2) {
+                background: lighten(#00b894, 55%);
+                border-radius: 5px;
+                padding: 3px 11px;
+                max-height: 30px;
+                margin-left: 10px;
+            }
+        }
+        &:hover {
+            .cross {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .cross {
+            z-index: 10;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: #161C29;
+            background-size: 40%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("../../../assets/cross.png");
+            cursor: pointer;
+            position: absolute;
+            top: -17px;
+            right: -17px;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease-out;
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+    }
+    
+    @media (max-width: 500px) {
+        .card {
+            margin: 20px 5px;
+            min-width: 200px;
+            width: 100%;
+        }
+    }

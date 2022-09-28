@@ -1,0 +1,51 @@
+section {
+    display: flex;
+    justify-content: center;
+    max-width: 680px;
+    margin: 20px auto;
+}
+
+.side {
+    width: 50%;
+    h1 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+}
+
+.expense {
+    & h1 {
+        color: #d63031;
+    }
+}
+
+.income {
+    & h1 {
+        color: #00b894;
+    }
+}
+
+.buttons {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .hide {
+        display: none;
+    }
+    .buttons {
+        display: block;
+    }
+    .side {
+        width: 75%;
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        width: 100vw;
+    }
+    .side {
+        width: 80%;
+    }
+}

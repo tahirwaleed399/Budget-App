@@ -1,0 +1,35 @@
+nav {
+    background: linear-gradient(to right, #007682, #02A78B);
+    padding: 14px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    font-size: 21px;
+}
+
+section {
+    background-color: #161C29;
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+    height: 50vh;
+    h1 {
+        font-size: 62px;
+        color: #fff;
+        &.red {
+            color: #d63031;
+        }
+        &.green {
+            color: #00b894;
+        }
+    }
+}
+
+footer {
+    background-color: #2d3436;
+    padding: 1rem;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    margin-top: 6rem;
+}
