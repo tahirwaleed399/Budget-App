@@ -1,0 +1,40 @@
+.field {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.amount {
+    width: 120px;
+}
+
+.inputs {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+@media (max-width:500px) {
+    .amount {
+        width: unset;
+    }
+    .inputs {
+        flex-direction: column;
+        max-width: 80%;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+    .button {
+        width: 50%;
+    }
+}
+
+@media (max-width:300px) {
+    form {
+        max-width: 200px;
+        margin: auto;
+        display: block;
+    }
+}

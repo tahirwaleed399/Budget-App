@@ -1,0 +1,6 @@
+<div class="card" mat-raised-button (click)="CallFunctions($event)" [ngClass]="{'income' : budgetItem.amount >= 0,
+'expense' : budgetItem.amount < 0  }">
+    <span>{{budgetItem.description}}</span>
+    <span>{{budgetItem.amount}}</span>
+    <div class="cross"></div>
+</div>

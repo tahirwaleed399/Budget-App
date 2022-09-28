@@ -1,0 +1,42 @@
+<div class="buttons">
+    <button class="button is-danger" #btn (click)="IncomeExpenseShow(income,expense,btn)">Show Expenses</button>
+</div>
+
+<section>
+
+    <div class="income side" #income>
+        <h1>Incomes</h1>
+        <ng-container *ngIf="budgetItems.length > 0 ; else elseBlock">
+
+
+            <div *ngFor="let budgetItem of budgetItems">
+                <ng-container *ngIf="budgetItem.amount >= 0">
+                    <app-card (sendBudgetItem)="DeleteItem($event)" [cardGettingitem]="budgetItem" (sendBudgetItemAfterUpdate)="setUpdateItem($event)"></app-card>
+                </ng-container>
+
+            </div>
+        </ng-container>
+
+        <ng-template #elseBlock>
+            No Incomes to Show
+        </ng-template>
+
+    </div>
+
+    <div class="expense side hide" #expense>
+        <h1>Expenses</h1>
+        <ng-container *ngIf="budgetItems.length > 0 ; else elseBlock2">
+            <div *ngFor="let budgetItem of budgetItems">
+                <ng-container *ngIf="budgetItem.amount < 0">
+                    <app-card (sendBudgetItem)="DeleteItem($event)" [cardGettingitem]="budgetItem" (sendBudgetItemAfterUpdate)="setUpdateItem($event)"></app-card>
+                </ng-container>
+
+            </div>
+        </ng-container>
+        <ng-template #elseBlock2>
+            No expense to Show
+        </ng-template>
+    </div>
+
+
+</section>
